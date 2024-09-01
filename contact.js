@@ -7,6 +7,10 @@ const Links = document.querySelectorAll("a");
 const Title = document.querySelector(".left-side-title");
 const desc = document.querySelector(".description");
 const overlay = document.querySelector(".overlay");
+const name = document.querySelector("#text");
+const email = document.querySelector("#email");
+const textarea = document.querySelector("#textarea");
+const submitBtn = document.querySelector("#submit-btn");
 
 const states = [
     {
@@ -53,11 +57,19 @@ function circleButtonHandler() {
 circleBtn.addEventListener("click", circleButtonHandler);
 
 
+function inputHandler(){
+    return name.value.trim() === "" || !email.value.includes('@')
+         || textarea.value.trim() === "" ? alert("Invalid! please input all the fields")
+        : (name.value = "", email.value  = "", textarea.value = "");
+   
+}
+
 function sideBarHandler(){
     menuBtn.classList.toggle("active");
     navbarContainer.classList.toggle("active");   
 }
 
 
+submitBtn.addEventListener("click", inputHandler);
 menuBtn.addEventListener("click", sideBarHandler);
-cirlceBtn.addEventListener("click", circleButtonHandler);
+circleBtn.addEventListener("click", circleButtonHandler);

@@ -161,3 +161,8 @@ a:hover{
     color:  #5f5c5c;
 }
 
+@media only screen and (max-width: 394px) {
+  .Home-title {
+    font-size: 50px;
+  }
+}
